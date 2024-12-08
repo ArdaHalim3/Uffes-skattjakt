@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rätt ord kontroll</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hej Ufuk! Kul att du har hittat hit.</h1>
+        <h2>Fyll i de rätta orden</h2>
+        <div id="inputs">
+            <div class="input-container">
+                <input type="text" id="input1" class="input-field answer" placeholder="Fråga 1" />
+                <label class="input-label">Fråga 1</label>
+            </div>
+            <div class="input-container">
+                <input type="text" id="input2" class="input-field answer" placeholder="Fråga 2" />
+                <label class="input-label">Fråga 2</label>
+            </div>
+            <div class="input-container">
+                <input type="text" id="input3" class="input-field answer" placeholder="Fråga 3" />
+                <label class="input-label">Fråga 3</label>
+            </div>
+            <div class="input-container">
+                <input type="text" id="input4" class="input-field answer" placeholder="Fråga 4" />
+                <label class="input-label">Fråga 4</label>
+            </div>
+            <div class="input-container">
+                <input type="text" id="input5" class="input-field answer" placeholder="Fråga 5" />
+                <label class="input-label">Fråga 5</label>
+            </div>
+            <div class="input-container">
+                <input type="text" id="input6" class="input-field answer" placeholder="Fråga 6" />
+                <label class="input-label">Fråga 6</label>
+            </div>
+            <div class="input-container">
+                <input type="text" id="input7" class="input-field answer" placeholder="Fråga 7" />
+                <label class="input-label">Fråga 7</label>
+            </div>
+            <div class="input-container">
+                <input type="text" id="input8" class="input-field answer" placeholder="Fråga 8" />
+                <label class="input-label">Fråga 8</label>
+            </div>
+            <div class="input-container">
+                <input type="text" id="input9" class="input-field answer" placeholder="Fråga 9" />
+                <label class="input-label">Fråga 9</label>
+            </div>
+            <div class="input-container">
+                <input type="text" id="input10" class="input-field answer" placeholder="Fråga 10" />
+                <label class="input-label">Fråga 10</label>
+            </div>
+        </div>
+
+        <button id="checkButton">Kontrollera svar</button>
+        <div id="result" class="result"></div>
+        <script>
+            // När knappen klickas på
+            document.querySelector('button').addEventListener('click', function () {
+                // Visa resultatet
+                document.querySelector('.result').style.display = 'block';
+            });
+        </script>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

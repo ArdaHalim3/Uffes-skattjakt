@@ -1,0 +1,255 @@
+/* Andra grundläggande CSS-regler */
+body {
+    font-family: monospace;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    background-image: url('RMK12727PLW.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    /* Ensure full viewport height */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Vertically center content */
+    flex-direction: column;
+}
+
+h1 {
+    background-color: #fff;
+    border: 3px solid #000;
+    padding: 4px 8px;
+    box-shadow: 3px 3px 0 #000, 6px 6px 0 #4a90e2;
+    margin: 0 auto;
+    /* Ensure h1 is centered */
+}
+
+h2 {
+    background-color: #fff;
+    border: 3px solid #000;
+    padding: 4px 8px;
+    box-shadow: 3px 3px 0 #000, 6px 6px 0 #4a90e2;
+    width: 50%;
+    margin: 20px auto;
+    /* Center and add space around h2 */
+    text-align: center;
+}
+
+.correct {
+    background-color: lightgreen !important;
+    border: 2px solid green !important;
+}
+
+.incorrect {
+    background-color: lightcoral !important;
+    border: 2px solid red !important;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.input-box {
+    margin: 10px;
+}
+
+.result,
+#result {
+    font-family: monospace;
+    margin-top: 20px;
+    font-weight: bolder;
+    background-color: #fff;
+    border: 3px solid #000;
+    padding: 4px 8px;
+    box-shadow: 3px 3px 0 #000, 6px 6px 0 #4a90e2;
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
+    display: none;
+    /* Dölj elementet initialt */
+}
+
+#checkButton{
+    font-weight: bold;
+    background-color: #fff;
+    border: 3px solid #000;
+    padding: 4px 8px;
+    box-shadow: 3px 3px 0 #000, 6px 6px 0 #4a90e2;
+    margin: 0 auto;
+}
+
+/* Container for input field */
+.input-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 40px auto;
+    font-family: monospace;
+}
+
+/* Input field */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    border: 3px solid #000;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 3px 3px 0 #000, 6px 6px 0 #4a90e2;
+    margin-bottom: 15px;
+}
+
+.input-label {
+    position: absolute;
+    left: -3px;
+    top: -30px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #000;
+    padding: 4px 8px;
+    transform: rotate(-1deg);
+    z-index: 1;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.input-field:focus+.input-label {
+    transform: rotate(0deg) scale(1.05);
+    background-color: #4a90e2;
+}
+
+/* Focus effect for the input field */
+.input-field:focus {
+    animation: focus-pulse 4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+
+.input-field:focus::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: white;
+    z-index: -1;
+}
+
+.input-field:focus::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: -2;
+    clip-path: inset(0 100% 0 0);
+    animation: glitch-slice 4s steps(2, end) infinite;
+}
+
+@keyframes glitch-slice {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    10% {
+        clip-path: inset(0 5% 0 0);
+    }
+
+    20% {
+        clip-path: inset(0 80% 0 0);
+    }
+
+    30% {
+        clip-path: inset(0 10% 0 0);
+    }
+
+    40% {
+        clip-path: inset(0 50% 0 0);
+    }
+
+    50% {
+        clip-path: inset(0 30% 0 0);
+    }
+
+    60% {
+        clip-path: inset(0 70% 0 0);
+    }
+
+    70% {
+        clip-path: inset(0 15% 0 0);
+    }
+
+    80% {
+        clip-path: inset(0 90% 0 0);
+    }
+
+    90% {
+        clip-path: inset(0 5% 0 0);
+    }
+
+    100% {
+        clip-path: inset(0 100% 0 0);
+    }
+}
+
+@keyframes focus-pulse {
+
+    0%,
+    100% {
+        border-color: #000;
+    }
+
+    50% {
+        border-color: #4a90e2;
+    }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    h2 {
+        width: 80%;
+        /* Adjust width for smaller screens */
+    }
+
+    .input-container {
+        width: 80%;
+    }
+
+    .input-field {
+        font-size: 14px;
+    }
+
+    .container {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        width: 90%;
+    }
+
+    .input-container {
+        width: 90%;
+    }
+
+    .input-field {
+        font-size: 12px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+}
